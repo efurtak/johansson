@@ -1,0 +1,19 @@
+
+<div class="footer-images">
+  <div>
+    <%= image_tag 'stopka/swedish-technology.png', class: 'footer-image' %>
+  </div>
+  <div>
+    <%= image_tag 'stopka/made-in-poland.png', class: 'footer-image' %>
+  </div>
+</div>
+
+<div class="footer-text-1">
+  <strong>Ekstra moc, giga wydajność, mega oszczędność, ultra skuteczność</strong> - to poziomy SEX (6), które oznakowane są sześcioma gwiazdkami oraz mają 6 lat gwarancji - czyli dużo wszystkiego z sześć. To też precyzuje, że tylko produkty z poziomu SEX (6) zaspokoją Twoje mega potrzeby. Sześć po szwedzku to SEX, a więc mamy najSEXowniejsze spraye na świecie!
+</div>
+
+<div class="footer-text-2">
+  <strong>Zatwierdzone i dopuszczone do zakupów/użytku przez oddziały <%= link_to_if controller.action_name == 'o_nas', image_tag('stopka/abb-small.png', width: '45px'), new_user_session_path, rel: 'noindex nofollow' %> we wszystkich krajach świata</strong>
+  <br>
+  <%= image_tag 'stopka/abb-big.png', width: '200px', class: 'abb-big' %>
+</div>

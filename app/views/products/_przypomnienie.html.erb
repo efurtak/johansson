@@ -1,0 +1,9 @@
+<div class="center">
+  <% if @product.poziom < 6 %>
+    <h3><%= @product.tytul %></h3>
+    <br>
+    <h3><strong>Pamiętaj! Poziom <%= @product.poziom %> to nie poziom SEX (6)!</strong></h3>
+  <% else %>
+    <h3><strong>Zainwestuj raz!</strong></h3>
+  <% end %>
+</div>

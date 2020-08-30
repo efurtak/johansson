@@ -1,0 +1,37 @@
+<div id="menu-right">
+
+  <ul class="menu-ul-outer">
+    
+    <% if user_signed_in? && current_user.id == 1 %>
+      <li class="menu-li-outer">
+        Admin
+        <ul class="menu-ul-inner px-0">
+          <li><%= link_to 'Nowy produkt', new_product_path %></li>
+          <li><%= link_to 'Wyloguj', destroy_user_session_path, method: :delete %></li>
+        </ul>
+      </li>
+    <% end %>
+
+    <li class="menu-li-outer">
+      Firma
+      <ul class="menu-ul-inner px-0">
+        <li><%= link_to 'O nas', o_nas_path %></li>
+        <li><%= link_to 'Gwarancja', gwarancja_path %></li>
+        <li><%= link_to 'Ekologia', ekologia_path %></li>
+      </ul>
+    </li>
+
+    <li class="menu-li-outer">
+      O&nbsp;aerozolach
+      <ul class="menu-ul-inner px-0">
+        <li><%= link_to 'Nasze aerozole', nasze_aerozole_path %></li>
+        <li><%= link_to 'Aerozole w życiu', aerozole_w_zyciu_path %></li>
+        <li><%= link_to 'Proces produkcji', proces_produkcji_path %></li>
+      </ul>
+    </li>
+    
+    <li class="menu-li-outer"><%= link_to 'Kontakt', kontakt_path %></li>
+
+  </ul>
+
+</div>

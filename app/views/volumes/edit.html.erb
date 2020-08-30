@@ -1,0 +1,51 @@
+<% content_for :title do %>
+  <title>Edytuj pojemność i cenę</title>
+<% end %>
+
+<% content_for :metatag_robots do %>
+  <meta name="robots" content="noindex nofollow">
+<% end %>
+
+
+
+<h1><%= @product.kod %></h1>
+
+<p>Aktualne pojemności i ceny:</p>
+
+<p>
+  <table class="table border">
+    <thead>
+      <tr>
+        <th scope="col">Pojemność</th>
+        <th scope="col">Cena</th>
+        <th scope="col">Waluta</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @volumes.each do |volume| %>
+        <tr>
+            <td><%= volume.pojemnosc %></td>
+            <td><%= volume.cena %></td>
+            <td><%= volume.waluta %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</p>
+
+<p>Edytuj pojemność i cenę:</p>
+
+<p>
+  <%= form_with model: [@product, @product.volumes.build], url: product_volume_path(params[:locale], @product), method: :patch do |form| %>
+    <%= form.label 'Pojemność:' %>
+    <%= form.text_field :pojemnosc, value: "#{@volume.pojemnosc}", class: 'form-control' %>
+    <br>
+    <%= form.label 'Cena:' %>
+    <%= form.text_field :cena, value: "#{@volume.cena}", class: 'form-control' %>
+    <br>
+    <%= form.label 'Waluta:' %>
+    <%= form.text_field :waluta, value: "#{@volume.waluta}", class: 'form-control' %>
+    <br>
+    <%= form.submit 'Zaktualizuj', class: 'btn btn-secondary' %>
+  <% end %>
+</p>

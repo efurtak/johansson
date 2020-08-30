@@ -1,0 +1,355 @@
+<div id="menu-left">
+  <ul class="menu-ul-outer">
+    <li class="menu-li-outer" id="produkty">
+      <%= link_to 'Products', products_path(filter: 'wszystkie') %>
+      <ul class="menu-ul-inner px-0">
+        <li>
+          <%= link_to 'Greases', products_path(filter: 'smary') %>
+          <ul class="menu-ul-inner-2 px-0">
+            
+            <li>
+              <%= link_to 'Extra thick', products_path(filter: 'smary_ekstra_geste') %>
+              <ul class="menu-ul-inner-3 px-0">
+                <li><%= link_to 'Universal', products_path(filter: 'smary_ekstra_geste_uniwersalne') %></li>
+                <li>
+                  <%= link_to 'With PTFE', products_path(filter: 'smary_ekstra_geste_z_ptfe') %>
+                  <ul class="menu-ul-inner-4 px-0">
+                    <li><%= link_to 'Lithium', products_path(filter: 'smary_ekstra_geste_z_ptfe_litowe') %></li>
+                  </ul>
+                </li>
+                <li><%= link_to 'With MOS2', products_path(filter: 'smary_ekstra_geste_z_mos2') %></li>
+                <li><%= link_to 'With graphite', products_path(filter: 'smary_ekstra_geste_z_grafitem') %></li>
+                <li>
+                  <%= link_to 'White', products_path(filter: 'smary_ekstra_geste_biale') %>
+                  <ul class="menu-ul-inner-4 px-0">
+                    <li><%= link_to 'Calcium', products_path(filter: 'smary_ekstra_geste_biale_wapniowe') %></li>
+                    <li><%= link_to 'With PTFE', products_path(filter: 'smary_ekstra_geste_biale_z_ptfe') %></li>
+                  </ul>
+                </li>
+              </ul>    
+            </li>
+            
+            <li>
+              <%= link_to 'Thick', products_path(filter: 'smary_geste') %>
+              <ul class="menu-ul-inner-3 px-0">
+                <li><%= link_to 'Universal', products_path(filter: 'smary_geste_uniwersalne') %></li>
+                <li>
+                  <%= link_to 'With PTFE', products_path(filter: 'smary_geste_z_ptfe') %>
+                  <ul class="menu-ul-inner-4 px-0">
+                    <li><%= link_to 'Lithium', products_path(filter: 'smary_geste_z_ptfe_litowe') %></li>
+                  </ul>    
+                </li>
+                <li><%= link_to 'With MOS2', products_path(filter: 'smary_geste_z_mos2') %></li>
+                <li><%= link_to 'With graphite', products_path(filter: 'smary_geste_z_grafitem') %></li>
+                <li>
+                  <%= link_to 'White', products_path(filter: 'smary_geste_biale') %>
+                  <ul class="menu-ul-inner-4 px-0">
+                    <li><%= link_to 'Calcium', products_path(filter: 'smary_geste_biale_wapniowe') %></li>
+                    <li><%= link_to 'With PTFE', products_path(filter: 'smary_geste_biale_z_ptfe') %></li>
+                  </ul>  
+                </li>
+              </ul>
+            </li>
+            
+            <li>
+              <%= link_to 'Thin', products_path(filter: 'smary_rzadkie') %>
+              <ul class="menu-ul-inner-3 px-0">
+                <li><%= link_to 'Universal', products_path(filter: 'smary_rzadkie_uniwersalne') %></li>
+                <li>
+                  <%= link_to 'With PTFE', products_path(filter: 'smary_rzadkie_z_ptfe') %>
+                  <ul class="menu-ul-inner-4 px-0">
+                    <li><%= link_to 'Lithium', products_path(filter: 'smary_rzadkie_z_ptfe_litowe') %></li>
+                  </ul>      
+                </li>
+                <li><%= link_to 'With MOS2', products_path(filter: 'smary_rzadkie_z_mos2') %></li>
+                <li><%= link_to 'With graphite', products_path(filter: 'smary_rzadkie_z_grafitem') %></li>
+                <li>
+                  <%= link_to 'White', products_path(filter: 'smary_rzadkie_biale') %>
+                  <ul class="menu-ul-inner-4 px-0">
+                    <li><%= link_to 'Calcium', products_path(filter: 'smary_rzadkie_biale_wapniowe') %></li>
+                    <li><%= link_to 'With PTFE', products_path(filter: 'smary_rzadkie_biale_z_ptfe') %></li>
+                  </ul>  
+                </li>
+              </ul>    
+            </li>
+
+            <li>
+              <%= link_to 'Universal', products_path(filter: 'smary_uniwersalne') %>
+              <ul class="menu-ul-inner-3 px-0">
+                <li><%= link_to 'Extra thick', products_path(filter: 'smary_uniwersalne_ekstra_geste') %></li>
+                <li><%= link_to 'Thick', products_path(filter: 'smary_uniwersalne_geste') %></li>
+                <li><%= link_to 'Thin', products_path(filter: 'smary_uniwersalne_rzadkie') %></li>
+              </ul>    
+            </li>
+
+            <li>
+              <%= link_to 'With PTFE', products_path(filter: 'smary_z_ptfe') %>
+              <ul class="menu-ul-inner-3 px-0">
+                <li><%= link_to 'Extra thick', products_path(filter: 'smary_z_ptfe_ekstra_geste') %></li>
+                <li><%= link_to 'Thick', products_path(filter: 'smary_z_ptfe_geste') %></li>
+                <li><%= link_to 'Thin', products_path(filter: 'smary_z_ptfe_rzadkie') %></li>
+              </ul>    
+            </li>
+            
+            <li>
+              <%= link_to 'With MOS2', products_path(filter: 'smary_z_mos2') %>
+              <ul class="menu-ul-inner-3 px-0">
+                <li><%= link_to 'Extra thick', products_path(filter: 'smary_z_mos2_ekstra_geste') %></li>
+                <li><%= link_to 'Thick', products_path(filter: 'smary_z_mos2_geste') %></li>
+                <li><%= link_to 'Thin', products_path(filter: 'smary_z_mos2_rzadkie') %></li>
+              </ul>    
+            </li>
+            
+            <li>
+              <%= link_to 'With graphite', products_path(filter: 'smary_z_grafitem') %>
+              <ul class="menu-ul-inner-3 px-0">
+                <li><%= link_to 'Extra thick', products_path(filter: 'smary_z_grafitem_ekstra_geste') %></li>
+                <li><%= link_to 'Thick', products_path(filter: 'smary_z_grafitem_geste') %></li>
+                <li><%= link_to 'Thin', products_path(filter: 'smary_z_grafitem_rzadkie') %></li>
+              </ul>    
+            </li>
+            
+            <li>
+              <%= link_to 'White', products_path(filter: 'smary_biale') %>
+              <ul class="menu-ul-inner-3 px-0">
+                <li>
+                  <%= link_to 'Calcium', products_path(filter: 'smary_biale_wapniowe') %>
+                  <ul class="menu-ul-inner-4 px-0">
+                    <li><%= link_to 'Extra thick', products_path(filter: 'smary_biale_wapniowe_ekstra_geste') %></li>
+                    <li><%= link_to 'Thick', products_path(filter: 'smary_biale_wapniowe_geste') %></li>
+                    <li><%= link_to 'Thin', products_path(filter: 'smary_biale_wapniowe_rzadkie') %></li>
+                  </ul>  
+                </li>
+                <li>
+                  <%= link_to 'With PTFE', products_path(filter: 'smary_biale_z_ptfe') %>
+                  <ul class="menu-ul-inner-4 px-0">
+                    <li><%= link_to 'Extra thick', products_path(filter: 'smary_biale_z_ptfe_ekstra_geste') %></li>
+                    <li><%= link_to 'Thick', products_path(filter: 'smary_biale_z_ptfe_geste') %></li>
+                    <li><%= link_to 'Thin', products_path(filter: 'smary_biale_z_ptfe_rzadkie') %></li>
+                  </ul>  
+                </li>
+              </ul>    
+            </li>
+            
+          </ul>
+        </li>
+
+        <li>
+          <%= link_to 'Dedicated', products_path(filter: 'dedykowane') %>
+          <ul class="menu-ul-inner-2 px-0">
+            
+            <li>
+              <%= link_to 'To bearings', products_path(filter: 'dedykowane_do_lozysk') %>
+              <ul class="menu-ul-inner-3 px-0">
+                <li><%= link_to 'Universal', products_path(filter: 'dedykowane_do_lozysk_uniwersalne') %></li>
+                <li><%= link_to 'With PTFE', products_path(filter: 'dedykowane_do_lozysk_z_ptfe') %></li>
+                <li><%= link_to 'With MOS2', products_path(filter: 'dedykowane_do_lozysk_z_mos2') %></li>
+              </ul>    
+            </li>
+            
+            <li>
+              <%= link_to 'To gates', products_path(filter: 'dedykowane_do_bram') %>
+              <ul class="menu-ul-inner-3 px-0">
+                <li><%= link_to 'Universal', products_path(filter: 'dedykowane_do_bram_uniwersalne') %></li>
+                <li><%= link_to 'With PTFE', products_path(filter: 'dedykowane_do_bram_z_ptfe') %></li>
+                <li><%= link_to 'With MOS2', products_path(filter: 'dedykowane_do_bram_z_mos2') %></li>
+              </ul>
+            </li>
+            
+            <li>
+              <%= link_to 'To cranes', products_path(filter: 'dedykowane_do_dzwigow') %>
+              <ul class="menu-ul-inner-3 px-0">
+                <li>
+                  <%= link_to 'Liquid grease', products_path(filter: 'dedykowane_do_dzwigow_smar_plynny') %>
+                  <ul class="menu-ul-inner-4 px-0">
+                    <li><%= link_to 'Universal', products_path(filter: 'dedykowane_do_dzwigow_smar_plynny_uniwersalne') %></li>
+                  </ul>
+                </li>
+                <li>
+                  <%= link_to 'Semi-dry grease', products_path(filter: 'dedykowane_do_dzwigow_smar_polsuchy') %>
+                  <ul class="menu-ul-inner-4 px-0">
+                    <li><%= link_to 'With PTFE', products_path(filter: 'dedykowane_do_dzwigow_smar_polsuchy_z_ptfe') %></li>
+                    <li><%= link_to 'With MOS2', products_path(filter: 'dedykowane_do_dzwigow_smar_polsuchy_z_mos2') %></li>
+                    <li><%= link_to 'With graphite', products_path(filter: 'dedykowane_do_dzwigow_smar_polsuchy_z_grafitem') %></li>
+                    <li><%= link_to 'For aluminum booms', products_path(filter: 'dedykowane_do_dzwigow_smar_polsuchy_do_wysiegnikow_alu') %></li>
+                  </ul>
+                </li>
+              </ul>    
+            </li>
+            
+            <li>
+              <%= link_to 'To chains', products_path(filter: 'dedykowane_do_lancuchow') %>
+              <ul class="menu-ul-inner-3 px-0">
+                <li>
+                  <%= link_to 'Semi-dry lubricants', products_path(filter: 'dedykowane_do_lancuchow_polsuche_srodki_smarne') %>
+                  <ul class="menu-ul-inner-4 px-0">
+                    <li><%= link_to 'Universal', products_path(filter: 'dedykowane_do_lancuchow_polsuche_srodki_smarne_uniwersalne') %></li>
+                    <li><%= link_to 'With PTFE', products_path(filter: 'dedykowane_do_lancuchow_polsuche_srodki_smarne_z_ptfe') %></li>
+                    <li><%= link_to 'With MOS2', products_path(filter: 'dedykowane_do_lancuchow_polsuche_srodki_smarne_z_mos2') %></li>
+                    <li><%= link_to 'With graphite', products_path(filter: 'dedykowane_do_lancuchow_polsuche_srodki_smarne_z_grafitem') %></li>
+                  </ul>
+                </li>
+                <li>
+                  <%= link_to 'High-pressure oils', products_path(filter: 'dedykowane_do_lancuchow_oleje_wysokoczepne') %>
+                  <ul class="menu-ul-inner-4 px-0">
+                    <li><%= link_to 'Universal', products_path(filter: 'dedykowane_do_lancuchow_oleje_wysokoczepne_uniwersalne') %></li>
+                    <li><%= link_to 'With PTFE', products_path(filter: 'dedykowane_do_lancuchow_oleje_wysokoczepne_z_ptfe') %></li>
+                    <li><%= link_to 'With MOS2', products_path(filter: 'dedykowane_do_lancuchow_oleje_wysokoczepne_z_mos2') %></li>
+                    <li><%= link_to 'With graphite', products_path(filter: 'dedykowane_do_lancuchow_oleje_wysokoczepne_z_grafitem') %></li>
+                  </ul>  
+                </li>
+                <li>
+                  <%= link_to 'Crawling greases', products_path(filter: 'dedykowane_do_lancuchow_smary_pelzajace') %>
+                  <ul class="menu-ul-inner-4 px-0">
+                    <li><%= link_to 'Universal', products_path(filter: 'dedykowane_do_lancuchow_smary_pelzajace_uniwersalne') %></li>
+                    <li><%= link_to 'With PTFE', products_path(filter: 'dedykowane_do_lancuchow_smary_pelzajace_z_ptfe') %></li>
+                    <li><%= link_to 'With MOS2', products_path(filter: 'dedykowane_do_lancuchow_smary_pelzajace_z_mos2') %></li>
+                    <li><%= link_to 'With graphite', products_path(filter: 'dedykowane_do_lancuchow_smary_pelzajace_z_grafitem') %></li>
+                  </ul>  
+                </li>
+              </ul>    
+            </li>
+
+            <li>
+              <%= link_to 'To rubber', products_path(filter: 'dedykowane_do_gumy') %>
+              <ul class="menu-ul-inner-3 px-0">
+                <li><%= link_to 'O-ring fluid', products_path(filter: 'dedykowane_do_gumy_plyn_do_oringu') %></li>
+                <li><%= link_to 'O-ring paste', products_path(filter: 'dedykowane_do_gumy_pasta_do_oringu') %></li>
+                <li><%= link_to 'Extra thick o-ring paste', products_path(filter: 'dedykowane_do_gumy_ekstra_gesta_pasta_do_oringu') %></li>
+              </ul>
+            </li>
+
+            <li>
+              <%= link_to 'To bicycles', products_path(filter: 'dedykowane_do_rowerow') %>
+              <ul class="menu-ul-inner-3 px-0">
+                <li><%= link_to 'Bicycle sprays', products_path(filter: 'dedykowane_do_rowerow_spraye_rowerowe') %></li>
+                <li><%= link_to 'Bicycle cleaners', products_path(filter: 'dedykowane_do_rowerow_zmywacze_rowerowe') %></li>
+              </ul>
+            </li>
+
+            <li>
+              <%= link_to 'To locks', products_path(filter: 'dedykowane_do_zamkow') %>
+              <ul class="menu-ul-inner-3 px-0">
+                <li><%= link_to 'Universal', products_path(filter: 'dedykowane_do_zamkow_uniwersalne') %></li>
+                <li><%= link_to 'With PTFE', products_path(filter: 'dedykowane_do_zamkow_z_ptfe') %></li>
+              </ul>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li>
+          <%= link_to 'Rust removers', products_path(filter: 'odrdzewiacze') %>
+          <ul class="menu-ul-inner-2 px-0">
+            <li><%= link_to 'Universal', products_path(filter: 'odrdzewiacze_uniwersalne') %></li>
+            <li><%= link_to 'With PTFE', products_path(filter: 'odrdzewiacze_z_ptfe') %></li>
+            <li><%= link_to 'With MOS2', products_path(filter: 'odrdzewiacze_z_mos2') %></li>
+            <li><%= link_to 'With graphite', products_path(filter: 'odrdzewiacze_z_grafitem') %></li>
+            <li><%= link_to 'Graphite molybdenum', products_path(filter: 'odrdzewiacze_grafitowo_molibdenowe') %></li>
+          </ul>
+        </li>
+        
+        <li>
+          <%= link_to 'Multisprays', products_path(filter: 'multispraye') %>
+          <ul class="menu-ul-inner-2 px-0">
+            <li><%= link_to 'Universal', products_path(filter: 'multispraye_uniwersalne') %></li>
+            <li><%= link_to 'With PTFE', products_path(filter: 'multispraye_z_ptfe') %></li>
+            <li><%= link_to 'With MOS2', products_path(filter: 'multispraye_z_mos2') %></li>
+            <li><%= link_to 'With graphite', products_path(filter: 'multispraye_z_grafitem') %></li>
+          </ul>
+        </li>
+
+        <li>
+          <%= link_to 'Oils', products_path(filter: 'oleje') %>
+          <ul class="menu-ul-inner-2 px-0">
+            <li><%= link_to 'Light precision oils', products_path(filter: 'oleje_oleje_precyzyjne_lekkie') %></li>
+            <li><%= link_to 'Universal', products_path(filter: 'oleje_uniwersalne') %></li>
+            <li><%= link_to 'With PTFE', products_path(filter: 'oleje_z_ptfe') %></li>
+            <li><%= link_to 'With MOS2', products_path(filter: 'oleje_z_mos2') %></li>
+            <li><%= link_to 'With graphite', products_path(filter: 'oleje_z_grafitem') %></li>
+            <li><%= link_to 'For agriculture and forestry', products_path(filter: 'oleje_dla_rolnictwa_i_lesnictwa') %></li>
+          </ul>
+        </li>
+
+        <li>
+          <%= link_to 'Electricity and mechanics', products_path(filter: 'elektryka_i_mechanika') %>
+          <ul class="menu-ul-inner-2 px-0">
+            <li><%= link_to 'Connection protection', products_path(filter: 'elektryka_i_mechanika_ochrona_przylaczy') %></li>
+            <li><%= link_to 'Contact spray', products_path(filter: 'elektryka_i_mechanika_kontakt_spray') %></li>
+            <li><%= link_to 'Super insulator', products_path(filter: 'elektryka_i_mechanika_super_izolator') %></li>
+            <li><%= link_to 'Remover', products_path(filter: 'elektryka_i_mechanika_zmywacz') %></li>
+            <li><%= link_to 'Electroservice oil', products_path(filter: 'elektryka_i_mechanika_olej_elektroserwisowy') %></li>
+          </ul>
+        </li>
+
+        <li>
+          <%= link_to 'Protective assembly pastes', products_path(filter: 'pasty_montazowe_ochronne') %>
+          <ul class="menu-ul-inner-2 px-0">
+            <li><%= link_to 'Copper pastes', products_path(filter: 'pasty_montazowe_ochronne_pasty_miedziane') %></li>
+            <li><%= link_to 'Extra thick copper', products_path(filter: 'pasty_montazowe_ochronne_ekstra_geste_miedziane') %></li>
+            <li><%= link_to 'Ceramic pastes', products_path(filter: 'pasty_montazowe_ochronne_pasty_ceramiczne') %></li>
+            <li><%= link_to 'Extra thick ceramic', products_path(filter: 'pasty_montazowe_ochronne_ekstra_geste_ceramiczne') %></li>
+            <li><%= link_to 'Aluminum pastes', products_path(filter: 'pasty_montazowe_ochronne_pasty_aluminiowe') %></li>
+          </ul>
+        </li>
+
+        <li>
+          <%= link_to 'Metalworking', products_path(filter: 'obrobka_metali') %>
+          <ul class="menu-ul-inner-2 px-0">
+            <li><%= link_to 'Cutting fluids', products_path(filter: 'obrobka_metali_plyny_do_ciecia') %></li>
+            <li><%= link_to 'Threading oils', products_path(filter: 'obrobka_metali_oleje_do_gwintowania') %></li>
+            <li><%= link_to 'Threading pastes', products_path(filter: 'obrobka_metali_pasty_do_gwintowania') %></li>
+          </ul>
+        </li>
+
+        <li>
+          <%= link_to 'V-belts', products_path(filter: 'pasy_klinowe') %>
+        </li>
+
+        <li>
+          <%= link_to 'Vaseline', products_path(filter: 'wazeliny') %>
+          <ul class="menu-ul-inner-2 px-0">
+            <li><%= link_to 'Extra thick', products_path(filter: 'wazeliny_ekstra_geste') %></li>
+            <li><%= link_to 'Thick', products_path(filter: 'wazeliny_geste') %></li>
+            <li><%= link_to 'Thin', products_path(filter: 'wazeliny_rzadkie') %></li>
+          </ul>
+        </li>
+
+        <li>
+          <%= link_to 'Removers', products_path(filter: 'zmywacze') %>
+          <ul class="menu-ul-inner-2 px-0">
+            <li><%= link_to 'Machine degreaser', products_path(filter: 'zmywacze_odtluszczacz_maszynowy') %></li>
+            <li><%= link_to 'Service cleaner', products_path(filter: 'zmywacze_zmywacz_serwisowy') %></li>
+            <li><%= link_to 'Lubricant cleaner', products_path(filter: 'zmywacze_zmywacz_smarujacy') %></li>
+            <li><%= link_to 'Preservative cleaner', products_path(filter: 'zmywacze_zmywacz_konserwujacy') %></li>
+          </ul>
+        </li>
+
+        <li>
+          <%= link_to 'Anticorrosive', products_path(filter: 'antykorozyjne') %>
+          <ul class="menu-ul-inner-2 px-0">
+            <li><%= link_to 'Protective oil', products_path(filter: 'antykorozyjne_olej_ochronny') %></li>
+            <li><%= link_to 'Protective wax', products_path(filter: 'antykorozyjne_wosk_ochronny') %></li>
+            <li><%= link_to 'Protective paste', products_path(filter: 'antykorozyjne_pasta_ochronna') %></li>
+          </ul>
+        </li>
+
+        <li>
+          <%= link_to 'Accumulator paste', products_path(filter: 'aku_pasta') %>
+          <ul class="menu-ul-inner-2 px-0">
+            <li><%= link_to 'Battery paste', products_path(filter: 'aku_pasta_pasta_do_baterii') %></li>
+            <li><%= link_to 'Extra thick battery paste', products_path(filter: 'aku_pasta_ekstra_gesta_pasta_do_baterii') %></li>
+          </ul>
+        </li>
+
+      </ul>
+    </li>
+
+    <li class="menu-li-outer">
+      <div class="koszyk-slot">
+        <%= render 'layouts/koszyk' %>
+      </div>
+    </li>
+
+  </ul>
+</div>

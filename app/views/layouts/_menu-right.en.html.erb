@@ -1,0 +1,37 @@
+<div id="menu-right">
+
+  <ul class="menu-ul-outer">
+    
+    <% if user_signed_in? && current_user.id == 1 %>
+      <li class="menu-li-outer">
+        Admin
+        <ul class="menu-ul-inner px-0">
+          <li><%= link_to 'New product', new_product_path %></li>
+          <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+        </ul>
+      </li>
+    <% end %>
+
+    <li class="menu-li-outer">
+      Company
+      <ul class="menu-ul-inner px-0">
+        <li><%= link_to 'About', o_nas_path %></li>
+        <li><%= link_to 'Warranty', gwarancja_path %></li>
+        <li><%= link_to 'Ecology', ekologia_path %></li>
+      </ul>
+    </li>
+
+    <li class="menu-li-outer">
+      Aerosols
+      <ul class="menu-ul-inner px-0">
+        <li><%= link_to 'Our aerosols', nasze_aerozole_path %></li>
+        <li><%= link_to 'Aerosols in life', aerozole_w_zyciu_path %></li>
+        <li><%= link_to 'Production process', proces_produkcji_path %></li>
+      </ul>
+    </li>
+    
+    <li class="menu-li-outer"><%= link_to 'Contact', kontakt_path %></li>
+
+  </ul>
+
+</div>

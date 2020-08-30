@@ -1,0 +1,57 @@
+<% content_for :title do %>
+  <title>Dane adresowe</title>
+<% end %>
+
+
+
+<h1>Dane adresowe</h1>
+
+<%= form_with model: @message, url: orders_send_message_path, local: true do |form| %>
+
+  <p>
+    <%= form.label 'Imię i nazwisko' %>
+    <%= form.text_field :imie_i_nazwisko, class: 'form-control' %>
+  </p>
+
+  <p>
+    <%= form.label 'E-mail' %>
+    <%= form.text_field :email, class: 'form-control' %>
+  </p>
+
+  <p>
+    <%= form.label 'Komentarz / dane do faktury' %>
+    <%= form.text_area :komentarz, size: 'x6', class: 'form-control' %>
+  </p>
+
+  <p>Wysyłając zamówienie wyrażasz zgodę na przetwarzanie danych osobowych.</p>
+
+  <p><%= form.submit 'Wyślij zamówienie', class: 'btn btn-dark' %></p>
+
+<% end %>
+
+<br>
+
+<h2>Klauzula informacyjna - RODO</h2>
+
+<p>Administratorem Twoich danych jest: Johansson Alexander Poland z siedzibą w: Budowlanych 4, 84-200 Wejherowo, wpisanej do Centralnej Ewidencji i Informacji o Działalności Gospodarczej, pod numerem NIP: 583 315 94 31, REGON: 221 875 693. W sprawach związanych z przetwarzaniem i ochroną danych osobowych wyznaczony został punkt kontaktowy w postaci adresu e-mail: info@johansson-ab.com. Kontakt we wskazanych sprawach możliwy jest także w postaci tradycyjnej korespondencji na adres administratora z dopiskiem: „Ochrona Danych Osobowych” oraz osobiście pod adresem: Budowlanych 4, 84-200 Wejherowo.</p>
+
+<p>Podane przez Ciebie dane osobowe będą przetwarzane w następujących celach:
+  <ul>
+    <li>
+      wykonania umowy kupna-sprzedaży bądź usługi – przetwarzanie jest niezbędne do wykonania umowy, aż do czasu zakończenia umowy,
+    </li>
+    <li>
+      finansowo-księgowych – przetwarzanie jest niezbędne do wykonania przepisów prawa podatkowego,
+    </li>
+    <li>
+      obrony przed roszczeniami i dochodzenia roszczeń – do czasu wygaśnięcia okresu roszczeń zgodnie z przepisami Kodeksu Cywilnego,
+    </li>
+    <li>
+      prowadzenia procesów reklamacyjnych.
+    </li>
+  </ul>
+</p>
+
+<p>Posiadasz prawo dostępu do treści swoich danych oraz prawo ich sprostowania, usunięcia, ograniczenia przetwarzania, prawo do przenoszenia danych, prawo wniesienia sprzeciwu. Posiadasz prawo do cofnięcia zgody w dowolnym momencie. W celu cofnięcia zgody możesz skontaktować się z punktem obsługi klienta w naszej siedzibie bądź biurze: Budowlanych 4, 84-200 Wejherowo lub wysyłając wiadomość e-mail na adres: info@johansson-ab.com. Masz również prawo wniesienia skargi do organu nadzorczego – Prezesa Urzędu Ochrony Danych Osobowych.</p>
+
+<p>Podanie przez Ciebie danych osobowych jest w pełni dobrowolne. Niepodanie danych osobowych będzie skutkowało niemożliwością pełnego wykonania zobowiązań, przyjętych przez: Johansson Alexander Poland w ramach zawieranych z Tobą umów.</p>

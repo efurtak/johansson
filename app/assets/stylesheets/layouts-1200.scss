@@ -1,0 +1,159 @@
+@import 'colors';
+
+@media (min-width: 1200px) { 
+
+  .menu {
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.65);
+    
+    color: white !important;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .menu-mobile {
+    display: none;
+  }
+
+  .subtitle-panel {
+    font-size: 16px;
+    font-weight: bold;
+    height: 36px;
+    text-transform: uppercase;
+    color: white;
+    background-color: $color-subtitle-panel;
+    text-align: center;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .menu-ul-outer .menu-li-outer {
+    display: inline-block;
+
+    font-family: 'Russo One';
+    font-weight: 900;
+    font-size: 2.5vh;
+
+    text-transform: uppercase;
+
+    margin-right: 4vw;
+    cursor: default;
+  }
+
+  #menu-left .menu-ul-inner {
+    font-size: 1.75vh;
+    text-align: right;
+    cursor: default;
+  }
+
+  .menu-ul-inner, 
+  .menu-ul-inner-2, 
+  .menu-ul-inner-3, 
+  .menu-ul-inner-4 {
+    display: none;
+
+    position: absolute;
+    text-align: center;
+
+    font-weight: 400;
+    background-color: black;
+    border: solid 1px gray;
+
+    list-style-type: none;
+    z-index: 9999;
+  }
+
+  #menu-left .menu-ul-inner li a,
+  #menu-left .menu-ul-inner-2 li a,
+  #menu-left .menu-ul-inner-3 li a,
+  #menu-left .menu-ul-inner-4 li a {
+    display: block;
+    width: 300px;
+    padding-right: 10px;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+  }
+
+  #menu-right .menu-ul-inner li a {
+    display: block;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+  }
+
+  .menu-ul-inner li:hover {
+    color: $color-star-yellow;
+
+    .menu-ul-inner-2,
+    .menu-ul-inner-3,
+    .menu-ul-inner-4 {
+      color: white;
+    }
+  }
+
+  .menu-ul-inner li:hover {
+    background-color: #333;
+  }
+
+  .menu-li-outer:hover .menu-ul-inner {
+    display: block;
+  }
+
+  .menu-ul-inner-2, 
+  .menu-ul-inner-3, 
+  .menu-ul-inner-4 {
+    display: none;
+    position: absolute;
+    left: 300px;
+    margin-top: -42px;
+  }
+
+  .menu-ul-inner li:hover .menu-ul-inner-2 {
+    display: block;
+  }
+
+  .menu-ul-inner-2 li:hover .menu-ul-inner-3 {
+    display: block;
+  }
+
+  .menu-ul-inner-3 li:hover .menu-ul-inner-4 {
+    display: block;
+  }
+
+  .menu a {
+    color: white !important;
+  }
+
+  .menu a:hover {
+    color: $color-star-yellow !important;
+    text-decoration: none !important;
+  }
+
+  a:hover {
+    text-decoration: none !important;
+  }
+
+  #produkty {
+    padding-right: 4vw;
+  }
+
+  .obraz-rwd {
+    max-width: 530px;
+    max-height: auto;
+  }
+
+  /**/
+
+  .footer-text-1 {
+    padding-left: 200px;
+    padding-right: 200px;
+    text-align: center;
+  }
+
+}

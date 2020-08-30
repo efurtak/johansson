@@ -1,0 +1,51 @@
+<% content_for :title do %>
+  <title>Nowa pojemność i cena</title>
+<% end %>
+
+<% content_for :metatag_robots do %>
+  <meta name="robots" content="noindex nofollow">
+<% end %>
+
+
+
+<h1><%= @product.kod %></h1>
+
+<p>Aktualne pojemności i ceny:</p>
+
+<p>
+  <table class="table border">
+    <thead>
+      <tr>
+        <th scope="col">Pojemność</th>
+        <th scope="col">Cena</th>
+        <th scope="col">Waluta</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @volumes.each do |volume| %>
+        <tr>
+            <td><%= volume.pojemnosc %></td>
+            <td><%= volume.cena %></td>
+            <td><%= volume.waluta %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</p>
+
+<p>Nowa pojemność i cena:</p>
+
+<p>
+  <%= form_with model: [@product, @product.volumes.build], url: product_volumes_path(params[:locale], @product) do |form| %>
+    <%= form.label 'Pojemność:' %>
+    <%= form.text_field :pojemnosc, class: 'form-control' %>
+    <br>
+    <%= form.label 'Cena:' %>
+    <%= form.text_field :cena, class: 'form-control' %>
+    <br>
+    <%= form.label 'Waluta:' %>
+    <%= form.text_field :waluta, class: 'form-control' %>
+    <br>
+    <%= form.submit 'Dodaj', class: 'btn btn-secondary' %>
+  <% end %>
+</p>

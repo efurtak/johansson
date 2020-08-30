@@ -1,0 +1,23 @@
+<% content_for :title do %>
+  <title>Edytuj produkt</title>
+<% end %>
+
+<% content_for :metatag_robots do %>
+  <meta name="robots" content="noindex nofollow">
+<% end %>
+
+
+
+<h1>Edytuj produkt</h1>
+
+<br>
+
+<%= form_with model: @product, url: product_path(locale: params[:locale]) do |form| %>
+
+  <%= render 'form_new_and_edit', form: form, product: @product %>
+
+  <br>
+
+  <%= form.submit 'Zaktualizuj produkt', method: :patch, class: 'btn btn-secondary' %>
+
+<% end %>

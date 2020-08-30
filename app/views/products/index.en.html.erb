@@ -1,0 +1,57 @@
+<% content_for :title do %>
+  <title>Products</title>
+<% end %>
+
+
+
+<% if @filter %>
+  <h2><strong><%= nazwa_kategorii(filter: @filter, locale: params[:locale]) %></strong></h2>
+<% end %>
+
+
+
+<%= form_with(url: "/#{params[:locale]}/search", method: "get", local: true) do %>
+  
+  <div class="input-group mb-3">
+    <%= text_field_tag(:search_kod, '', class: 'form-control') %>
+    <div class="input-group-append">
+      <%= submit_tag("Search", class: 'btn btn-outline-secondary') %>
+    </div>
+  </div>
+
+<% end %>
+
+
+
+<% @products.each do |product| %>
+
+  <div class="container py-3 mb-3 border shadow-sm">
+    <div class="row">
+
+      <div class="col-12 col-md-3">
+        <%= link_to(product_path(params[:locale], product.id), class: "thumbnail") do %>
+          <%= image_tag(url_for(product.miniatura), width: '100', height: '150', class: 'ml-4 mb-4') %>
+        <% end %>
+      </div>
+
+      <div class="col-12 col-md-9">
+        <h4>
+          <strong><%= link_to product.kod, product_path(params[:locale], product.id) %></strong>
+          <%= image_tag("gwiazdki#{product.poziom}.jpg", class: 'ml-3') %>
+        </h4>
+        <strong><%= product.tytul_en %></strong><br>
+        Level (<%= product.poziom %>)<br><br>
+        <%= image_tag("gwarancja#{product.poziom}.jpg") %>
+        <br>
+        <br>
+        <%= product.opis_krotki_en %>
+      </div>
+
+    </div>
+  </div>
+
+<% end %>
+
+
+
+<%= paginate @products %>

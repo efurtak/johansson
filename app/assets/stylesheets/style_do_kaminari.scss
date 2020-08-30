@@ -1,0 +1,10 @@
+@import 'colors';
+
+.pagination a {
+  color: black !important;
+}
+
+.pagination .active a {
+  background-color: $color-star-yellow !important;
+  border-color: $color-star-yellow !important;
+}

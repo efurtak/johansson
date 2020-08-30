@@ -1,0 +1,23 @@
+<% content_for :title do %>
+  <title>Nowy produkt</title>
+<% end %>
+
+<% content_for :metatag_robots do %>
+  <meta name="robots" content="noindex nofollow">
+<% end %>
+
+
+
+<h1>Nowy produkt</h1>
+
+<br>
+
+<%= form_with model: @product, url: products_path do |form| %>
+
+  <%= render 'form_new_and_edit', form: form, product: @product %>
+
+  <br>
+
+  <%= form.submit 'Utwórz produkt', class: 'btn btn-secondary' %>
+
+<% end %>

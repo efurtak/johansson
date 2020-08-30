@@ -1,0 +1,21 @@
+# == Schema Information
+#
+# Table name: messages
+#
+#  id              :integer          not null, primary key
+#  imie_i_nazwisko :text
+#  email           :text
+#  komentarz       :text
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
+one:
+  imie_i_nazwisko: MyText
+  email: MyText
+  komentarz: MyText
+
+two:
+  imie_i_nazwisko: MyText
+  email: MyText
+  komentarz: MyText

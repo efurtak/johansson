@@ -1,0 +1,50 @@
+<h2>Zamawiający</h2>
+
+<p>Imię i nazwisko:<br><%= @imie_i_nazwisko %></p>
+<p>Adres e-mail:<br><%= @email %></p>
+<p>Komentarz / dane do faktury:<br><%= simple_format(@komentarz) %></p>
+
+<hr>
+
+<h2>Zawartość koszyka:</h2>
+
+<% @suma = 0 %>
+
+<table class="table border" style="border: 1px solid black; border-collapse: collapse;">
+  <thead>
+    <tr>
+      <th scope="col" style="border: 1px solid black; padding-right: 150px;">Kod</th>
+      <th scope="col" style="border: 1px solid black; padding-right: 50px;">Pojemność</th>
+      <th scope="col" style="border: 1px solid black; padding-right: 50px;">Ilość</th>
+      <th scope="col" style="border: 1px solid black; padding-right: 50px;">Cena</th>
+      <th scope="col" style="border: 1px solid black; padding-right: 50px;">Wartość</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <% @volumes.each do |volume| %>
+      
+      <% @produkt = Product.where(id: volume.fetch('product_id')).take %>
+      <% @ilosc = @koszyk.fetch(volume.fetch('id').to_s).to_i %>
+
+      <tr>
+        <td style="border: 1px solid black;"><%= @produkt.kod %></td>
+        <td style="border: 1px solid black;"><%= volume.fetch('pojemnosc') %></td>
+        <td style="border: 1px solid black;"><%= @ilosc %></td>
+        <td style="border: 1px solid black;"><%= number_to_currency(volume.fetch('cena'), unit: volume.fetch('waluta') + " ") %></td>
+        <td style="border: 1px solid black;"><%= number_to_currency(@ilosc * volume.fetch('cena').to_f, unit: volume.fetch('waluta') + " ") %></td>
+      </tr>
+
+      <% @suma += (@ilosc * volume.fetch('cena').to_f) %>
+      <% @waluta = volume.fetch('waluta') %>
+
+    <% end %>
+
+  </tbody>
+</table>
+
+<hr>
+
+<% if @suma > 0 %>
+  <p>SUMA: <%= number_to_currency(@suma, unit: @waluta + " ") %></p>
+<% end %>

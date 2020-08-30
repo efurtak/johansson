@@ -1,0 +1,70 @@
+<% @suma = 0 %>
+<% @waluty = [] %>
+
+<div class="table-responsive">
+  <table class="table border">
+    <thead>
+      <tr>
+        <th scope="col">Kod</th>
+        <th scope="col">Pojemność</th>
+        <th scope="col">Ilość</th>
+        <th scope="col">Cena</th>
+        <th scope="col">Wartość</th>
+        <th scope="col">-</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <% @volumes.each do |volume| %>
+        
+        <% @produkt = Product.where(id: volume.product_id).take %>
+        <% @ilosc = @koszyk.ile_sztuk(wariant: volume.id.to_s).to_i %>
+
+        <tr>
+          <td><%= link_to @produkt.kod, product_path(params[:locale], @produkt.id) %></td>
+          <td><%= volume.pojemnosc %></td>
+          <td><%= @ilosc %></td>
+          <td><%= number_to_currency(volume.cena, unit: volume.waluta + " ") %></td>
+          <td><%= number_to_currency(@ilosc * volume.cena, unit: volume.waluta + " ") %></td>
+          
+          <td>
+            <%= form_with(url: "/#{params[:locale]}/cart_remove", method: :post) do %>
+              <%= hidden_field_tag(:wariant, volume.id) %>
+              <%= submit_tag("Usuń", data: { confirm: 'Czy na pewno usunąć produkt z koszyka?' }, class: 'btn btn-sm btn-danger') %>
+            <% end %>
+          </td>
+
+        </tr>
+
+        <% @suma += (@ilosc * volume.cena) %>
+        <% @waluty << volume.waluta %>
+        <% @waluta = volume.waluta %>
+
+      <% end %>
+
+    </tbody>
+  </table>
+</div>
+
+
+
+<% if @waluty.uniq.size > 1 %>
+  W koszyku znajdują się produkty w różnych walutach!
+<% else %>
+  <% if @suma > 0 %>
+    <p>
+      <%= form_with(url: "/#{params[:locale]}/cart_empty", method: :get) do %>
+        <%= submit_tag("Opróżnij koszyk", data: { confirm: 'Czy na pewno opróżnić koszyk?'}, class: 'btn btn-danger') %>
+      <% end %>
+    </p>
+  <% end %>
+
+
+  <% if @suma > 0 %>
+    <hr>
+    
+    <p>SUMA: <%= number_to_currency(@suma, unit: @waluta + " ") %></p>
+
+    <p><%= link_to 'Dodaj dane adresowe', orders_prepare_path, class: 'btn btn-dark' %></p>
+  <% end %>
+<% end %>

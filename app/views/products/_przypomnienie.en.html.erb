@@ -1,0 +1,9 @@
+<div class="center">
+  <% if @product.poziom < 6 %>
+    <h3><%= @product.tytul_en %></h3>
+    <br>
+    <h3><strong>Remember! Level <%= @product.poziom %> is not the level SEX (6)!</strong></h3>
+  <% else %>
+    <h3><strong>Invest once!</strong></h3>
+  <% end %>
+</div>

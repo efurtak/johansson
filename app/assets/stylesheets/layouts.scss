@@ -1,0 +1,148 @@
+@import 'colors';
+
+body {
+  background-image: image-url('machine.jpg');
+  overflow-x: hidden;
+  background-attachment: fixed;
+}
+
+.container {
+  background-color: white;
+  color: black;
+}
+
+.menu {
+  display: none;
+}
+
+.menu-mobile {
+  display: block;
+
+  background-color: rgba(0, 0, 0, 0.65);
+  
+  color: white !important;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.subtitle-panel {
+  font-size: 16px;
+  font-weight: bold;
+  height: auto;
+  text-transform: uppercase;
+  color: white;
+  background-color: $color-subtitle-panel;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.obraz-rwd {
+  max-width: 320px;
+  max-height: auto;
+}
+
+.logo-rwd {
+  max-width: 160px;
+  max-height: auto;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+}
+
+.modal-body {
+  font-size: 3vh;
+}
+
+.modal-body li {
+  list-style-type: none;  
+}
+
+.modal-body ul ul li {
+  padding-left: 25px;
+}
+
+.modal-body ul {
+  border-left: 1px solid #ccc;
+}
+
+.modal-body .menu-ul-inner-2 {
+  margin-bottom: 25px;
+}
+
+/**/
+
+.greasy {
+  color: $color-star-yellow;
+}
+
+/**/
+
+.row-footer {
+  background-color: black;
+  color: white;
+}
+
+.footer-images {
+  display: flex;
+  flex-direction: column;
+  
+  justify-content: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  text-align: center;
+}
+
+.footer-image {
+  width: 300px;
+}
+
+.footer-text-1 {
+  padding-left: 50px;
+  padding-right: 50px;
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+.footer-text-2 {
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+.abb-big {
+  margin: 25px;
+}
+
+/**/
+
+.center {
+  text-align: center
+}
+
+.header-color {
+  font-family: 'Russo One';
+  font-weight: 900;
+  color: $color-header-color;
+  text-transform: uppercase;
+}
+
+/**/
+
+.image-float-left {
+  float: left;
+  margin-right: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.image-float-right {
+  float: right;
+  margin-left: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}

@@ -1,0 +1,5 @@
+var elems = document.getElementsByClassName('koszyk-slot');
+
+for (var i = 0; i <= elems.length - 1; i++) {
+  elems[i].innerHTML = "<%= j(render partial: 'layouts/koszyk') %>";
+}

@@ -1,0 +1,111 @@
+<% content_for :title do %>
+  <title><%= @product.kod %> - <%= @product.tytul_en %></title>
+<% end %>
+
+<% content_for :metatag_description do %>
+  <meta name="description" content="<%= @product.kod %> - <%= @product.tytul_en %>">
+<% end %>
+
+
+
+<% if user_signed_in? && current_user.id == 1 %>
+
+  <hr>
+
+  <%= link_to 'Edit product', edit_product_path(params[:locale], @product.id), class: 'btn btn-secondary' %>
+  <%= link_to 'Delete product', product_path(params[:locale], @product.id), method: :delete, data: { confirm: "Are you sure to DELETE the product?" }, class: 'btn btn-danger ml-5' %>
+
+  <br>
+  <br>
+
+  <table class="table border">
+    <thead>
+      <tr>
+        <th scope="col">Capacity</th>
+        <th scope="col">Price</th>
+        <th scope="col">Currency</th>
+        <th scope="col">-</th>
+        <th scope="col">-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @volumes.each do |volume| %>
+        <tr>
+            <td><%= volume.pojemnosc %></td>
+            <td><%= volume.cena %></td>
+            <td><%= volume.waluta %></td>
+            <td><%= link_to 'Edit', edit_product_volume_path(params[:locale], volume.product_id, volume.id), class: 'btn btn-sm btn-secondary' %></td>
+            <td><%= link_to 'Delete', product_volume_path(params[:locale], volume.product_id, volume.id), method: :delete, data: { confirm: "Are you sure to DELETE capacity and price?" }, class: 'btn btn-sm btn-danger' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= link_to 'Add capacity and price', new_product_volume_path(params[:locale], @product.id), class: 'btn btn-secondary' %>
+
+  
+  <br>
+  <hr>
+  <br>
+
+<% end %>
+
+
+
+<h4>
+  <strong><%= @product.kod %></strong>
+  <%= image_tag("gwiazdki#{@product.poziom}.jpg", class: 'ml-3') %>
+  <%= image_tag("gwarancja#{@product.poziom}.jpg", class: 'ml-5') %>
+</h4>
+
+<strong><%= @product.tytul_en %></strong><br>
+Level (<%= @product.poziom %>)<br>
+
+<br>
+
+<div class="container">
+  <div class="row">
+    
+    <div class="col-12 col-md-6">
+      <%= image_tag(url_for(@product.miniatura), width: '200', height: '300') %>
+    </div>
+
+    <div class="col-12 col-md-6">
+      
+      <% volumes_price_array = Volume.where(product_id: @product.id)
+        .map { |volume| ["#{volume.pojemnosc} - #{number_to_currency(volume.cena, unit: volume.waluta + " ")}", volume.id] }
+        .sort!
+        .reverse!
+        .keep_if { |x| x[0] =~ /.*EUR.*/ } %>
+
+      <%= form_with(url: "/#{params[:locale]}/cart_add", method: "post") do %>
+        <p>
+          <br>
+          Quantity:
+          <%= text_field_tag(:ilosc, 1, { class: 'form-control'}) %>
+          <br>
+          Capacity:
+          <%= select_tag(:wariant, options_for_select(volumes_price_array.to_a), { class: 'form-control'}) %>
+        </p>
+
+        <p><%= submit_tag('Add to cart', data: { "disable-with": "Adding..." }, class: 'btn btn-dark', id: 'dodaj-do-koszyka') %></p>
+      <% end %>
+
+    </div>
+
+  </div>
+</div>
+
+<br>
+
+Capacities: <%= volumes_only(product: @product) %>
+
+<br>
+<br>
+
+<%= @product.opis_dlugi_en %>
+
+<br>
+<br>
+
+<%= render 'przypomnienie' %>

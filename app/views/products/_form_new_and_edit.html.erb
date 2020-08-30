@@ -1,0 +1,657 @@
+<h2>Kategoria</h2>
+  <%= form.select(:kategoria, options_for_select([
+      ['Smary', 1],
+      ['Dedykowane', 2],
+      ['Odrdzewiacze', 3],
+      ['Multispraye', 4],
+      ['Oleje', 5],
+      ['Elektryka i mechanika', 6],
+      ['Pasty montażowe ochronne', 7],
+      ['Obróbka metali', 8],
+      ['Pasy klinowe', 9],
+      ['Wazeliny', 10],
+      ['Zmywacze', 11],
+      ['Antykorozyjne', 12],
+      ['AKU pasta', 13]
+    ], product.kategoria), {}, { class: 'form-control' }) %>
+
+<br>
+
+<h2>Kod produktu</h2>
+<%= form.text_field :kod, class: 'form-control' %>
+
+<br>
+
+<% if params[:locale] == 'pl' %>
+  <h2>Tytuł produktu - PL</h2>
+  <%= form.text_field :tytul, class: 'form-control' %>
+<% end %>
+
+<% if params[:locale] == 'en' %>
+  <h2>Tytuł produktu - EN</h2>
+  <%= form.text_field :tytul_en, class: 'form-control' %>
+<% end %>
+
+<% if params[:locale] == 'de' %>
+  <h2>Tytuł produktu - DE</h2>
+  <%= form.text_field :tytul_de, class: 'form-control' %>
+<% end %>
+
+<% if params[:locale] == 'se' %>
+  <h2>Tytuł produktu - SE</h2>
+  <%= form.text_field :tytul_se, class: 'form-control' %>
+<% end %>
+
+<% if params[:locale] == 'ru' %>
+  <h2>Tytuł produktu - RU</h2>
+  <%= form.text_field :tytul_ru, class: 'form-control' %>
+<% end %>
+
+<br>
+
+<h2>Poziom</h2>
+  <%= form.select(:poziom, options_for_select([
+      ['6', 6],
+      ['4', 4],
+      ['3', 3]
+    ], product.poziom), {}, { class: 'form-control' }) %>
+
+<br>
+
+<h2>Miniatura</h2>
+  <%= form.file_field :miniatura %>
+
+<br>
+<br>
+
+<% if params[:locale] == 'pl' %>
+  <h2>Krótki opis - na liście produktów - PL</h2>
+  <%= form.rich_text_area :opis_krotki %>
+<% end %>
+
+<% if params[:locale] == 'en' %>
+  <h2>Krótki opis - na liście produktów - EN</h2>
+  <%= form.rich_text_area :opis_krotki_en %>
+<% end %>
+
+<% if params[:locale] == 'de' %>
+  <h2>Krótki opis - na liście produktów - DE</h2>
+  <%= form.rich_text_area :opis_krotki_de %>
+<% end %>
+
+<% if params[:locale] == 'se' %>
+  <h2>Krótki opis - na liście produktów - SE</h2>
+  <%= form.rich_text_area :opis_krotki_se %>
+<% end %>
+
+<% if params[:locale] == 'ru' %>
+  <h2>Krótki opis - na liście produktów - RU</h2>
+  <%= form.rich_text_area :opis_krotki_ru %>
+<% end %>
+
+<br>
+
+<% if params[:locale] == 'pl' %>
+  <h2>Długi opis - karta produktu - PL</h2>
+  <%= form.rich_text_area :opis_dlugi %>
+<% end %>
+
+<% if params[:locale] == 'en' %>
+  <h2>Długi opis - karta produktu - EN</h2>
+  <%= form.rich_text_area :opis_dlugi_en %>
+<% end %>
+
+<% if params[:locale] == 'de' %>
+  <h2>Długi opis - karta produktu - DE</h2>
+  <%= form.rich_text_area :opis_dlugi_de %>
+<% end %>
+
+<% if params[:locale] == 'se' %>
+  <h2>Długi opis - karta produktu - SE</h2>
+  <%= form.rich_text_area :opis_dlugi_se %>
+<% end %>
+
+<% if params[:locale] == 'ru' %>
+  <h2>Długi opis - karta produktu - RU</h2>
+  <%= form.rich_text_area :opis_dlugi_ru %>
+<% end %>
+
+<br>
+
+<% if params[:locale] == 'pl' %>
+  <h2>Kategorie - druga kolumna menu - cz. I</h2>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:ekstra_geste) %>
+              </div>
+            </div>
+            <%= form.label(:ekstra_geste, 'Ekstra gęste', class: 'form-control') %>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:geste) %>
+              </div>
+            </div>
+            <%= form.label(:geste, 'Gęste', class: 'form-control') %>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:rzadkie) %>
+              </div>
+            </div>
+            <%= form.label(:rzadkie, 'Rzadkie', class: 'form-control') %>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:uniwersalne) %>
+              </div>
+            </div>
+            <%= form.label(:uniwersalne, 'Uniwersalne', class: 'form-control') %>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:z_ptfe) %>
+              </div>
+            </div>
+            <%= form.label(:z_ptfe, 'Z PTFE', class: 'form-control') %>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:z_mos2) %>
+              </div>
+            </div>
+            <%= form.label(:z_mos2, 'Z MOS2', class: 'form-control') %>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:z_grafitem) %>
+              </div>
+            </div>
+            <%= form.label(:z_grafitem, 'Z grafitem', class: 'form-control') %>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:biale) %>
+              </div>
+            </div>
+            <%= form.label(:biale, 'Białe', class: 'form-control') %>
+          </div>
+
+        </div>
+        <div class="col-6">
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:do_lozysk) %>
+              </div>
+            </div>
+            <%= form.label(:do_lozysk, 'Do łożysk', class: 'form-control') %>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:do_bram) %>
+              </div>
+            </div>
+            <%= form.label(:do_bram, 'Do bram', class: 'form-control') %>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:do_dzwigow) %>
+              </div>
+            </div>
+            <%= form.label(:do_dzwigow, 'Do dźwigów', class: 'form-control') %>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:do_lancuchow) %>
+              </div>
+            </div>
+            <%= form.label(:do_lancuchow, 'Do łańcuchów', class: 'form-control') %>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:do_gumy) %>
+              </div>
+            </div>
+            <%= form.label(:do_gumy, 'Do gumy', class: 'form-control') %>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:do_rowerow) %>
+              </div>
+            </div>
+            <%= form.label(:do_rowerow, 'Do rowerów', class: 'form-control') %>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:do_zamkow) %>
+              </div>
+            </div>
+            <%= form.label(:do_zamkow, 'Do zamków', class: 'form-control') %>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  <br>
+
+  <h2>Kategorie - druga kolumna menu - cz. II</h2>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-6"> 
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:grafitowo_molibdenowe) %>
+              </div>
+            </div>
+            <%= form.label(:grafitowo_molibdenowe, 'Grafitowo-molibdenowe', class: 'form-control') %>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:oleje_precyzyjne_lekkie) %>
+              </div>
+            </div>
+            <%= form.label(:oleje_precyzyjne_lekkie, 'Oleje precyzyjne lekkie', class: 'form-control') %>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:dla_rolnictwa_i_lesnictwa) %>
+              </div>
+            </div>
+            <%= form.label(:dla_rolnictwa_i_lesnictwa, 'Dla rolnictwa i leśnictwa', class: 'form-control') %>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:ochrona_przylaczy) %>
+              </div>
+            </div>
+            <%= form.label(:ochrona_przylaczy, 'Ochrona przyłączy', class: 'form-control') %>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:kontakt_spray) %>
+              </div>
+            </div>
+            <%= form.label(:kontakt_spray, 'Kontakt spray', class: 'form-control') %>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:super_izolator) %>
+              </div>
+            </div>
+            <%= form.label(:super_izolator, 'Super izolator', class: 'form-control') %>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:zmywacz) %>
+              </div>
+            </div>
+            <%= form.label(:zmywacz, 'Zmywacz', class: 'form-control') %>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:olej_elektroserwisowy) %>
+              </div>
+            </div>
+            <%= form.label(:olej_elektroserwisowy, 'Olej elektroserwisowy', class: 'form-control') %>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:pasty_miedziane) %>
+              </div>
+            </div>
+            <%= form.label(:pasty_miedziane, 'Pasty miedziane', class: 'form-control') %>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:ekstra_geste_miedziane) %>
+              </div>
+            </div>
+            <%= form.label(:ekstra_geste_miedziane, 'Ekstra gęste miedziane', class: 'form-control') %>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:pasty_ceramiczne) %>
+              </div>
+            </div>
+            <%= form.label(:pasty_ceramiczne, 'Pasty ceramiczne', class: 'form-control') %>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:ekstra_geste_ceramiczne) %>
+              </div>
+            </div>
+            <%= form.label(:ekstra_geste_ceramiczne, 'Ekstra gęste ceramiczne', class: 'form-control') %>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:pasty_aluminiowe) %>
+              </div>
+            </div>
+            <%= form.label(:pasty_aluminiowe, 'Pasty aluminiowe', class: 'form-control') %>
+          </div>
+
+        </div>
+        <div class="col-6">
+          
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:plyny_do_ciecia) %>
+              </div>
+            </div>
+            <%= form.label(:plyny_do_ciecia, 'Płyny do cięcia', class: 'form-control') %>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:oleje_do_gwintowania) %>
+              </div>
+            </div>
+            <%= form.label(:oleje_do_gwintowania, 'Oleje do gwintowania', class: 'form-control') %>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:pasty_do_gwintowania) %>
+              </div>
+            </div>
+            <%= form.label(:pasty_do_gwintowania, 'Pasty do gwintowania', class: 'form-control') %>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:odtluszczacz_maszynowy) %>
+              </div>
+            </div>
+            <%= form.label(:odtluszczacz_maszynowy, 'Odtłuszczacz maszynowy', class: 'form-control') %>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:zmywacz_serwisowy) %>
+              </div>
+            </div>
+            <%= form.label(:zmywacz_serwisowy, 'Zmywacz serwisowy', class: 'form-control') %>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:zmywacz_smarujacy) %>
+              </div>
+            </div>
+            <%= form.label(:zmywacz_smarujacy, 'Zmywacz smarujący', class: 'form-control') %>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:zmywacz_konserwujacy) %>
+              </div>
+            </div>
+            <%= form.label(:zmywacz_konserwujacy, 'Zmywacz konserwujacy', class: 'form-control') %>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:olej_ochronny) %>
+              </div>
+            </div>
+            <%= form.label(:olej_ochronny, 'Olej ochronny', class: 'form-control') %>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:wosk_ochronny) %>
+              </div>
+            </div>
+            <%= form.label(:wosk_ochronny, 'Wosk ochronny', class: 'form-control') %>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:pasta_ochronna) %>
+              </div>
+            </div>
+            <%= form.label(:pasta_ochronna, 'Pasta ochronna', class: 'form-control') %>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:pasta_do_baterii) %>
+              </div>
+            </div>
+            <%= form.label(:pasta_do_baterii, 'Pasta do baterii', class: 'form-control') %>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:ekstra_gesta_pasta_do_baterii) %>
+              </div>
+            </div>
+            <%= form.label(:ekstra_gesta_pasta_do_baterii, 'Ekstra gęsta pasta do baterii', class: 'form-control') %>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  <br>
+
+  <h2>Kategorie - trzecia kolumna menu</h2>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-6"> 
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:wapniowe) %>
+              </div>
+            </div>
+            <%= form.label(:wapniowe, 'Wapniowe', class: 'form-control') %>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:smar_plynny) %>
+              </div>
+            </div>
+            <%= form.label(:smar_plynny, 'Smar płynny', class: 'form-control') %>
+          </div>
+          
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:smar_polsuchy) %>
+              </div>
+            </div>
+            <%= form.label(:smar_polsuchy, 'Smar półsuchy', class: 'form-control') %>
+          </div>
+          
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:polsuche_srodki_smarne) %>
+              </div>
+            </div>
+            <%= form.label(:polsuche_srodki_smarne, 'Półsuche środki smarne', class: 'form-control') %>
+          </div>
+          
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:oleje_wysokoczepne) %>
+              </div>
+            </div>
+            <%= form.label(:oleje_wysokoczepne, 'Oleje wysokoczepne', class: 'form-control') %>
+          </div>
+          
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:smary_pelzajace) %>
+              </div>
+            </div>
+            <%= form.label(:smary_pelzajace, 'Smary pełzające', class: 'form-control') %>
+          </div>
+          
+        </div>
+        <div class="col-6">
+          
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:plyn_do_oringu) %>
+              </div>
+            </div>
+            <%= form.label(:plyn_do_oringu, 'Płyn do o-ringu', class: 'form-control') %>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:pasta_do_oringu) %>
+              </div>
+            </div>
+            <%= form.label(:pasta_do_oringu, 'Pasta do o-ringu', class: 'form-control') %>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:ekstra_gesta_pasta_do_oringu) %>
+              </div>
+            </div>
+            <%= form.label(:ekstra_gesta_pasta_do_oringu, 'Ekstra gęsta pasta do o-ringu', class: 'form-control') %>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:spraye_rowerowe) %>
+              </div>
+            </div>
+            <%= form.label(:spraye_rowerowe, 'Spraye rowerowe', class: 'form-control') %>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:zmywacze_rowerowe) %>
+              </div>
+            </div>
+            <%= form.label(:zmywacze_rowerowe, 'Zmywacze rowerowe', class: 'form-control') %>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  <br>
+
+  <h2>Kategorie - czwarta kolumna menu</h2>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-6"> 
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:litowe) %>
+              </div>
+            </div>
+            <%= form.label(:litowe, 'Litowe', class: 'form-control') %>
+          </div>
+          
+        </div>
+        <div class="col-6">
+          
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <%= form.check_box(:do_wysiegnikow_alu) %>
+              </div>
+            </div>
+            <%= form.label(:do_wysiegnikow_alu, 'Do wysięgników ALU', class: 'form-control') %>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+<% end %>

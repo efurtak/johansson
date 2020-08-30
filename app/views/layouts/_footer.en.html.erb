@@ -1,0 +1,19 @@
+
+<div class="footer-images">
+  <div>
+    <%= image_tag 'stopka/swedish-technology.png', class: 'footer-image' %>
+  </div>
+  <div>
+    <%= image_tag 'stopka/made-in-poland.png', class: 'footer-image' %>
+  </div>
+</div>
+
+<div class="footer-text-1">
+  <strong>Extra power, gigantic efficiency, mega savings, ultra effectiveness</strong> - these are SEX (6) levels, which are marked with six stars and have a 6-year warranty - which is a lot of everything out of six. It also specifies that only products from the SEX (6) level will satisfy your mega needs. Six in Swedish is SEX, so we have the most SEXiest sprays in the world!
+</div>
+
+<div class="footer-text-2">
+  <strong>Approved and authorized for purchase/use by branches of <%= link_to_if controller.action_name == 'o_nas', image_tag('stopka/abb-small.png', width: '45px'), new_user_session_path, rel: 'noindex nofollow' %> in all countries of the world</strong>
+  <br>
+  <%= image_tag 'stopka/abb-big.png', width: '200px', class: 'abb-big' %>
+</div>

@@ -1,0 +1,57 @@
+<% content_for :title do %>
+  <title>Address data</title>
+<% end %>
+
+
+
+<h1>Address data</h1>
+
+<%= form_with model: @message, url: orders_send_message_path, local: true do |form| %>
+
+  <p>
+    <%= form.label 'First name and last name' %>
+    <%= form.text_field :imie_i_nazwisko, class: 'form-control' %>
+  </p>
+
+  <p>
+    <%= form.label 'E-mail' %>
+    <%= form.text_field :email, class: 'form-control' %>
+  </p>
+
+  <p>
+    <%= form.label 'Comment / invoice details' %>
+    <%= form.text_area :komentarz, size: 'x6', class: 'form-control' %>
+  </p>
+
+  <p>By sending an order you agree to the processing of personal data.</p>
+
+  <p><%= form.submit 'Send order', class: 'btn btn-dark' %></p>
+
+<% end %>
+
+<br>
+
+<h2>Information clause - GDPR</h2>
+
+<p>The administrator of your data is: Johansson Alexander Poland with its registered office in: Budowlanych 4, 84-200 Wejherowo, entered into the Central Register and Information on Economic Activity, under the NIP number: 583 315 94 31, REGON: 221 875 693. In matters related to processing and personal data protection a contact point has been designated in the form of an email address: info@johansson-ab.com. Contact in these matters is also possible in the form of traditional correspondence to the administrator's address with the note: "Personal Data Protection" and in person at: Budowlanych 4, 84-200 Wejherowo.</p>
+
+<p>The personal data you provide will be processed for the following purposes:
+  <ul>
+    <li>
+      performance of the purchase or sale contract - processing is necessary to perform the contract until the end of the contract,
+    </li>
+    <li>
+      financial and accounting - processing is necessary to comply with tax law,
+    </li>
+    <li>
+      defense against claims and pursuing claims - until the expiry of the claims period in accordance with the provisions of the Civil Code,
+    </li>
+    <li>
+      conducting complaint processes.
+    </li>
+  </ul>
+</p>
+
+<p>You have the right to access your data and the right to rectify, delete, limit processing, the right to transfer data, the right to object. You have the right to withdraw consent at any time. In order to withdraw your consent, you can contact the customer service point in our headquarters or office: Budowlanych 4, 84-200 Wejherowo or by sending an e-mail to: info@johansson-ab.com. You also have the right to lodge a complaint with the supervisory body - the President of the Office for Personal Data Protection.</p>
+
+<p>Providing personal data by you is completely voluntary. Failure to provide personal data will result in the inability to fully fulfill the obligations assumed by: Johansson Alexander Poland under the contracts concluded with you.</p>
